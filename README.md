@@ -1,6 +1,6 @@
 # Naeem Documentation Website
 
-![Naeem Documentation Hero](hero.png)
+![Naeem Documentation Hero](logo.png)
 
 A modern, high-performance, and mobile-first static website designed for **Naeem Documentation**, a printing and legal documentation service provider in Karachi, Pakistan.
 
