@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent Agreements - Naeem Documentation</title>
+  <link rel="icon" type="image/svg+xml" href="/media/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://wa.me" />
+  <link rel="preload" as="image" href="/media/logo.webp" fetchpriority="high" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=Space+Mono&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    /* Service Header */
+    .service-header {
+        padding: 8.6rem 2rem 5.6rem;
+        background: var(--navy);
+        position: relative;
+        overflow: hidden;
+    }
+    .service-header::before {
+      content: ""; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(247,169,40,0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(247,169,40,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+      mask-image: radial-gradient(circle at center, black 30%, transparent 85%);
+      z-index: 0;
+    }
+    .sh-inner { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; text-align: center; }
+    
+    @media (min-width: 1280px) {
+      .service-header { padding-left: 4rem; padding-right: 4rem; }
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 2rem 4rem;
+    }
+    @media (min-width: 768px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .photo-grid img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .cat-section-label {
+      color: var(--gold);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4rem 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="cursor" aria-hidden="true"></div>
+
+      <nav id="main-nav">
+    <div class="nav-container">
+      <a href="/index.html" class="nav-brand hover-target">
+        <img src="/media/logo.webp" alt="Naeem Documentation logo" width="40" height="40" decoding="async" fetchpriority="high" class="nav-logo" />
+        <span class="brand">Naeem Documentation</span>
+      </a>
+      <div class="desktop-links">
+        <a href="/index.html" class="hover-target">Home</a>
+        <div class="dropdown-wrap">
+          <a href="/services.html" class="dropdown-trigger hover-target">
+            Services
+            <svg class="dropdown-arrow" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="/services/black-and-white.html" class="hover-target">Black & White Copy</a>
+            <a href="/services/color-printing.html" class="hover-target">Color & Inkjet</a>
+            <a href="/services/plotter-printing.html" class="hover-target">Plotter Printing</a>
+            <a href="/services/legal-documentation.html" class="hover-target">Legal Documents</a>
+            <a href="/services/identity-services.html" class="hover-target">Identity Services</a>
+            <a href="/services/finishing-services.html" class="hover-target">Finishing Services</a>
+            <a href="/services/additional-services.html" class="hover-target">Additional Services</a>
+            <div class="menu-divider"></div>
+            <a href="/services.html" class="hover-target all-hub-link">All Services Hub →</a>
+          </div>
+        </div>
+        <a href="/about.html" class="hover-target">About</a>
+        <a href="/contact.html" class="hover-target">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://wa.me/923158157721?text=Hello%20Naeem%20Documentation%2C%20I%20would%20like%20a%20quote." class="btn-quote hover-target">
+          Get a Quote
+        </a>
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle Menu">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+      <div id="mobile-drawer" class="mobile-drawer-overlay" aria-hidden="true">
+    <button id="mobile-menu-close" class="mobile-drawer-close hover-target" aria-label="Close Menu">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <nav class="mobile-drawer-nav">
+      <a href="/index.html" class="hover-target mobile-link">Home</a>
+      <div class="mobile-services-wrapper">
+        <a href="/services.html" class="hover-target mobile-link" style="color: var(--gold);">Services</a>
+        <div class="mobile-submenu">
+          <a href="/services/black-and-white.html" class="hover-target mobile-link">Black & White Copy</a>
+          <a href="/services/color-printing.html" class="hover-target mobile-link">Color & Inkjet</a>
+          <a href="/services/plotter-printing.html" class="hover-target mobile-link">Plotter Printing</a>
+          <a href="/services/legal-documentation.html" class="hover-target mobile-link">Legal Documents</a>
+          <a href="/services/identity-services.html" class="hover-target mobile-link">Identity Services</a>
+          <a href="/services/finishing-services.html" class="hover-target mobile-link">Finishing Services</a>
+          <a href="/services/additional-services.html" class="hover-target mobile-link">Additional Services</a>
+        </div>
+      </div>
+      <a href="/about.html" class="hover-target mobile-link">About</a>
+      <a href="/contact.html" class="hover-target mobile-link">Contact</a>
+      <a href="https://wa.me/923158157721?text=Hello%20Naeem%20Documentation%2C%20I%20would%20like%20a%20quote." class="hover-target btn-quote-mobile">Get a Quote</a>
+    </nav>
+  </div>
+
+  <header class="service-header">
+    <div class="sh-inner">
+      <span class="service-tag reveal">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M7 8h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 8l-3 6h6l-3-6Zm12 0-3 6h6l-3-6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Rent Agreements
+      </span>
+      <h1 class="scene-title reveal" style="margin-top: 1.5rem;">Rent Agreements</h1>
+      <p class="scene-desc reveal" style="margin: 1.5rem auto 0; font-size: 1.1rem; max-width: 600px;">
+        Standardized contracts for property leasing.
+      </p>
+      
+        <div style="margin-top: 2rem;">
+            <a href="https://wa.me/923158157721?text=Hello%20Naeem%20Documentation,%20I%20want%20to%20inquire%20about%20Rent%20Agreements%20in%20Legal%20Documentation." class="hover-target mono rounded-full bg-[var(--gold)] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-[var(--navy)] transition hover:bg-[var(--gold2)] inline-block">
+                Inquire Now
+            </a>
+        </div>
+        
+    </div>
+  </header>
+
+        <div style="background: var(--navy2); padding: 4rem 2rem 2rem;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 class="scene-title reveal" style="font-size: 2.2rem; margin-bottom: 1.5rem;">Service Details</h2>
+                <p class="scene-desc reveal" style="font-size: 1.15rem; line-height: 1.8;">Naeem Documentation offers premium, professional-grade rent agreements services designed to meet your highest standards. We combine state-of-the-art equipment with expert handling to ensure your documents, portfolios, and legal paperwork are processed quickly and flawlessly. Our commitment to quality means every detail is perfect, whether you need rapid bulk processing or high-fidelity finishing.</p>
+            </div>
+        </div>
+        
+        <div style="background: var(--navy2); border-top: 1px solid var(--border);">
+            <div class="photo-grid reveal">
+                <img src="/media/legal.webp" alt="Rent Agreements preview 1" />
+                <img src="/media/legal.webp" alt="Rent Agreements preview 2" />
+                <img src="/media/legal.webp" alt="Rent Agreements preview 3" />
+                <img src="/media/legal.webp" alt="Rent Agreements preview 4" />
+            </div>
+        </div>
+        
+  <footer class="site-footer">
+    <div class="footer-row">
+      <p>© 2026 Naeem Documentation. All rights reserved.</p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-row credit-row">
+      Made with ❤️ by <a class="credit-link hover-target" href="https://www.linkedin.com/in/abdulhayykhan/" target="_blank" rel="noreferrer">Abdul Hayy Khan</a>
+    </div>
+  </footer>
+
+  <a id="wa-float" class="hover-target" href="https://wa.me/923158157721" aria-label="WhatsApp Us">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.36 13.58c-.27-.14-1.61-.79-1.86-.88-.25-.1-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.12-.41-2.14-1.31-.79-.7-1.32-1.57-1.48-1.84-.16-.27-.02-.42.12-.55.13-.13.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.83-2.02-.22-.53-.44-.46-.61-.47-.16-.01-.34-.01-.52-.01-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3 0 1.36.99 2.67 1.13 2.85.14.18 1.95 2.97 4.73 4.16.66.29 1.17.46 1.57.59.66.21 1.26.18 1.73.11.53-.08 1.61-.66 1.84-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32Z"/><path d="M12.04 2C6.6 2 2.18 6.25 2.18 11.54c0 1.82.49 3.62 1.42 5.19L2 22l5.45-1.75a10.16 10.16 0 0 0 4.59 1.1c5.44 0 9.86-4.25 9.86-9.54C21.9 6.25 17.48 2 12.04 2Z"/></svg>
+    <span>WhatsApp Us</span>
+  </a>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>
