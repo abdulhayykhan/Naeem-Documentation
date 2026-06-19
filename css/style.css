@@ -1160,6 +1160,10 @@
       isolation: isolate;
     }
 
+    .srv-card a.srv-link {
+      position: static;
+    }
+
     .srv-card a.srv-link::after {
       content: "";
       position: absolute;
