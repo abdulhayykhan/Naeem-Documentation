@@ -10,8 +10,11 @@ This repository contains the complete source code for the site, featuring a prem
 
 ## 🚀 Key Features
 
-* **Multi-Page Architecture:** Divided into distinct pages including Home, About, Contact, Services Hub, and 35+ specific service category pages.
-* **Semantic pure CSS Dropdown:** Desktop header navigation includes a top-down hoverable glassmorphic menu showing all 7 services. On mobile, this expands into nested sub-lists inside a responsive navigation drawer.
+* **Multi-Page Architecture:** Divided into distinct pages including Home, About, Contact, Services Hub, and 34 specific service category sub-pages (e.g., A4/A3 Photocopy, PVC Cards, Notarized Copies).
+* **Semantic Pure CSS Dropdown:** Desktop header navigation includes a top-down hoverable glassmorphic menu showing all 7 services. On mobile, this expands into nested sub-lists inside a responsive navigation drawer.
+* **Full-Card Click Interactions:** Grid boxes across the entire website act as responsive links to detail pages, not just the text link, with interactive custom cursor size changes.
+* **Premium Responsive Grid Layout:** Custom-built native CSS grid with square 1:1 ratio service preview images, matching card aspect ratios, and full-bleed image presentation with zero blank borders or gaps.
+* **Homepage Contact Section Upgrade:** Integrated map wrapped in a card frame aligning symmetrically with the text column heights dynamically on desktop.
 * **Production-Optimized Loading Payload:**
   * **96.5% Image Optimization:** All layout images in `media/` are optimized and converted to `.webp` format, lowering visual asset payload from ~37.4MB to ~1.3MB for near-instant rendering.
   * **Tailwind CSS CDN Removal:** Replaced Tailwind CSS compile-on-load CDNs with a custom, lightweight CSS grid/flex system in `style.css` to prevent layout shifts and eliminate extra script downloads.
@@ -20,7 +23,6 @@ This repository contains the complete source code for the site, featuring a prem
   * **Interactive Services Carousel:** Interactive sliding showcase of flagship services with indicators and fluid animations.
   * **Live Services Ticker:** Seamlessly scrolling brand announcement bar for secondary offers.
   * **Viewport Scroll Counters:** Stats section counters dynamically animate upwards once scrolled into view.
-* **G-Maps Integration:** Styled and embedded location verification iframe on contact sections.
 * **WhatsApp Quick-Routing CTA:** Floating widgets and category-specific links pre-fill WhatsApp messages with custom service interest notes.
 
 ---
@@ -69,6 +71,19 @@ Naeem-Documentation/
 
 ---
 
+## ⚙️ Architecture & Design Decisions
+
+### Tailwind Removal & Custom CSS Architecture
+To maximize load speeds and remove dependency on runtime script compilations, Tailwind CSS class styles were converted to native CSS rules inside `css/style.css`. Lightweight selectors (e.g. `.btn-inquire`, `.btn-quote`, `.srv-card`) utilize CSS custom variables to handle consistent theme token overrides (`--gold`, `--navy`, `--navy2`, etc.).
+
+### Clickable Card Box Overlay Pattern
+Instead of wrapping complex card layouts inside `<a>` anchors (which is semantically noisy), an absolute-positioned overlay `::after` pseudo-element is bound to the `.srv-link` selector. Setting the link element to `position: static` forces the context node to resolve to the parent `.srv-card` (which is `position: relative`). This spreads the clickable link across the entire card boundary while keeping the text and layout flow in place.
+
+### Full-Bleed 1:1 Media Cards
+Card images stretch cleanly to the outer borders using negative horizontal and vertical margins matching the parent card's padding boundaries (`margin: -2.5rem -2rem 1.5rem -2rem` on desktop). Overriding `width: 100%` ensures the image uses its full border-box layout width (`calc(100% + 4rem)`).
+
+---
+
 ## 💻 Local Setup & Development
 
 To view the website locally, run a static file server in the project directory:
@@ -94,6 +109,8 @@ Open `http://localhost:3000` in your web browser.
 * **WhatsApp:** Direct contact via floating widget
 * **Hours:** Monday to Sunday, 09:00 AM - 02:00 AM
 
+---
+
 ## 📄 License
 
 The website and content belong to [**Naeem Documentation**](https://naeemdocumentation.com).
@@ -101,4 +118,4 @@ The codebase and repository are maintained by [**Abdul Hayy Khan**](https://www.
 
 ---
 
-**Made with ❤️ by [**Abdul Hayy Khan**](https://www.linkedin.com/in/abdulhayykhan/)**
+**Built with ❤️ by [**Abdul Hayy Khan**](https://www.linkedin.com/in/abdulhayykhan/)**
