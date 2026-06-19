@@ -1692,3 +1692,22 @@
       transition: transform 200ms ease;
     }
 
+    .btn-inquire {
+      font-family: "Space Mono", monospace;
+      display: inline-block;
+      background: var(--gold);
+      border-radius: 9999px;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--navy);
+      text-decoration: none;
+      transition: background-color 220ms ease, transform 220ms ease;
+    }
+    .btn-inquire:hover {
+      background: var(--gold2);
+      transform: translateY(-2px);
+    }
+
