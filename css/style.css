@@ -1161,9 +1161,10 @@
     }
 
     .srv-card-img {
-      height: 210px;
-      object-fit: contain;
-      padding: 1rem;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      padding: 0;
       background:
         linear-gradient(135deg, rgba(247,169,40,0.16), rgba(105,231,255,0.09)),
         rgba(3,8,18,0.72);
