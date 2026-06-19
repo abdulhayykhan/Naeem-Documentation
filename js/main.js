@@ -9,9 +9,6 @@
       const revealTargets = document.querySelectorAll(".device-card, .printer-row, .reveal, .srv-card, .about-img-wrap, .about-content");
       const counters = document.querySelectorAll(".counter");
       let introDismissed = false;
-      let mouseX = 0, mouseY = 0;
-      let curX = 0, curY = 0;
-      let firstMove = true;
 
       const formatCounter = (value, target) => {
         if (target >= 1000000) { const m = value / 1000000; return m.toFixed(m >= 0.1 ? 1 : 0) + "M+"; }
@@ -20,42 +17,8 @@
       };
 
       if (cursor && !isCoarsePointer && !prefersReducedMotion) {
-        const CURSOR_LERP = 0.1;
-        let isAnimating = false;
-
-        const tickCursor = () => {
-          const dx = mouseX - curX;
-          const dy = mouseY - curY;
-
-          if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
-            curX = mouseX;
-            curY = mouseY;
-            cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0) translate(-50%, -50%)`;
-            isAnimating = false;
-            return;
-          }
-
-          curX += dx * CURSOR_LERP;
-          curY += dy * CURSOR_LERP;
-          cursor.style.transform = `translate3d(${curX}px, ${curY}px, 0) translate(-50%, -50%)`;
-          
-          requestAnimationFrame(tickCursor);
-        };
-
         document.addEventListener("mousemove", (e) => {
-          mouseX = e.clientX;
-          mouseY = e.clientY;
-
-          if (firstMove) {
-            curX = mouseX;
-            curY = mouseY;
-            firstMove = false;
-          }
-
-          if (!isAnimating) {
-            isAnimating = true;
-            requestAnimationFrame(tickCursor);
-          }
+          cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
         }, { passive: true });
 
         hoverables.forEach((el) => {
