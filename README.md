@@ -11,15 +11,16 @@ This repository contains the complete source code for the site, featuring a prem
 ## 🚀 Key Features
 
 * **Multi-Page Architecture:** Divided into distinct pages including Home, About, Contact, Services Hub, and 34 specific service category sub-pages (e.g., A4/A3 Photocopy, PVC Cards, Notarized Copies).
+* **Mobile-First Responsive Layouts:** Optimized for all screen sizes, starting with responsive grid and typography structures for mobile viewports, upgrading seamlessly to flex and grid distributions at larger viewport breakpoints.
 * **Semantic Pure CSS Dropdown:** Desktop header navigation includes a top-down hoverable glassmorphic menu showing all 7 services. On mobile, this expands into nested sub-lists inside a responsive navigation drawer.
-* **Full-Card Click Interactions:** Grid boxes across the entire website act as responsive links to detail pages, not just the text link, with interactive custom cursor size changes.
+* **Full-Card Click Interactions:** Grid boxes across the entire website act as responsive links to detail pages, not just the text link.
 * **Premium Responsive Grid Layout:** Custom-built native CSS grid with square 1:1 ratio service preview images, matching card aspect ratios, and full-bleed image presentation with zero blank borders or gaps.
 * **Homepage Contact Section Upgrade:** Integrated map wrapped in a card frame aligning symmetrically with the text column heights dynamically on desktop.
 * **Production-Optimized Loading Payload:**
   * **96.5% Image Optimization:** All layout images in `media/` are optimized and converted to `.webp` format, lowering visual asset payload from ~37.4MB to ~1.3MB for near-instant rendering.
   * **Tailwind CSS CDN Removal:** Replaced Tailwind CSS compile-on-load CDNs with a custom, lightweight CSS grid/flex system in `style.css` to prevent layout shifts and eliminate extra script downloads.
 * **Interactive Visual Enhancements:**
-  * **Optimized Cursor Follower:** Features an interactive custom cursor that automatically pauses its rendering thread (`requestAnimationFrame` loop) when the cursor is stationary to eliminate idle CPU usage.
+  * **Viewport Scroll Reveal & Stagger Animations:** Applied elegant scroll-reveal animations across all category and subservice subpages using lightweight browser `IntersectionObserver`, featuring staggered delays for grid items and photo previews.
   * **Interactive Services Carousel:** Interactive sliding showcase of flagship services with indicators and fluid animations.
   * **Live Services Ticker:** Seamlessly scrolling brand announcement bar for secondary offers.
   * **Viewport Scroll Counters:** Stats section counters dynamically animate upwards once scrolled into view.
@@ -31,7 +32,7 @@ This repository contains the complete source code for the site, featuring a prem
 
 * **HTML5:** Clean, search-engine friendly semantic structure.
 * **Vanilla CSS (3):** Styled with modern CSS variables, fluid responsive grids, glassmorphism filters (`backdrop-filter: blur(16px)`), custom hover states, and keyframe animations in `style.css`.
-* **Vanilla JavaScript (ES6):** Handles active menu drawers, slideshow navigation, statistical counters, and thottled rendering loops in `main.js`.
+* **Vanilla JavaScript (ES6):** Handles active menu drawers, slideshow navigation, statistical counters, and menu toggles in `main.js`.
 * **Google Fonts:** Outfit, Space Mono, Bebas Neue.
 
 ---
@@ -47,7 +48,7 @@ Naeem-Documentation/
 ├── css/
 │   └── style.css              # Custom Stylesheet (Variables, Dropdowns, Grids)
 ├── js/
-│   └── main.js                # Core JS logic (Ticker, counters, optimized cursor loop)
+│   └── main.js                # Core JS logic (Ticker, counters, mobile menu)
 ├── media/
 │   ├── favicon.svg            # Browser tab icon
 │   ├── logo.webp              # Brand identity mark

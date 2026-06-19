@@ -9,7 +9,6 @@
       --border: rgba(255,255,255,0.08);
       --safe-pad: 1rem;
     }
-    * { cursor: none; }
     html, body { margin: 0; padding: 0; }
     body {
       background: var(--navy);
@@ -44,19 +43,8 @@
       background: radial-gradient(circle at 50% 0%, rgba(247, 169, 40, 0.05) 0%, transparent 50%),
                   radial-gradient(circle at 80% 80%, rgba(41, 128, 185, 0.05) 0%, transparent 50%);
     }
-    #cursor {
-      position: fixed; top: 0; left: 0;
-      width: 12px; height: 12px;
-      border-radius: 999px;
-      background: var(--gold);
-      mix-blend-mode: difference;
-      pointer-events: none;
-      transform: translate3d(0, 0, 0) translate(-50%, -50%);
-      will-change: transform;
-      transition: width 160ms ease, height 160ms ease, background-color 160ms ease, opacity 160ms ease;
-      z-index: 100;
-    }
-    #cursor.hovered { width: 40px; height: 40px; background: var(--gold2); opacity: 0.5; }
+    
+    
     #main-nav {
       position: sticky; top: 0; z-index: 60;
       border-bottom: 1px solid transparent;
@@ -315,7 +303,7 @@
     }
 
     /* Prev/Next buttons */
-    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 20; background: rgba(5, 16, 31, 0.4); backdrop-filter: blur(8px); border: 1px solid var(--border); color: var(--white); width: 48px; height: 48px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: none; transition: background 200ms ease, border-color 200ms ease; }
+    .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 20; background: rgba(5, 16, 31, 0.4); backdrop-filter: blur(8px); border: 1px solid var(--border); color: var(--white); width: 48px; height: 48px; border-radius: 50%; display: flex; justify-content: center; align-items: center; transition: background 200ms ease, border-color 200ms ease; }
     .carousel-btn:hover { background: rgba(5, 16, 31, 0.8); border-color: var(--gold); }
     .prev-btn { left: 1rem; }
     .next-btn { right: 1rem; }
@@ -518,8 +506,7 @@
       .hero-wrap, .footer-row { max-width: 1200px; }
     }
     @media (pointer: coarse) {
-      * { cursor: auto !important; }
-      #cursor { display: none; }
+      
       body::before { opacity: 0.12; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -1465,7 +1452,6 @@
       color: var(--white);
       background: transparent;
       border: none;
-      cursor: none;
       padding: 0.25rem;
     }
     @media (min-width: 768px) {
@@ -1653,7 +1639,6 @@
       background: transparent;
       border: none;
       color: var(--white);
-      cursor: none;
       padding: 0.5rem;
     }
     .mobile-link {

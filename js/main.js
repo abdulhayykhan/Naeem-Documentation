@@ -1,11 +1,11 @@
 (function () {
-      const cursor = document.getElementById("cursor");
+
       const intro = document.getElementById("intro");
       const hero = document.getElementById("hero");
       const nav = document.getElementById("main-nav");
       const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
-      const hoverables = document.querySelectorAll("a, button, .device-card, .printer-mini, .srv-card");
+
       const revealTargets = document.querySelectorAll(".device-card, .printer-row, .reveal, .srv-card, .about-img-wrap, .about-content");
       const counters = document.querySelectorAll(".counter");
       let introDismissed = false;
@@ -16,16 +16,7 @@
         return Math.floor(value) + "+";
       };
 
-      if (cursor && !isCoarsePointer && !prefersReducedMotion) {
-        document.addEventListener("mousemove", (e) => {
-          cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
-        }, { passive: true });
 
-        hoverables.forEach((el) => {
-          el.addEventListener("mouseenter", () => cursor.classList.add("hovered"));
-          el.addEventListener("mouseleave", () => cursor.classList.remove("hovered"));
-        });
-      }
 
       const dismissIntro = () => {
         if (!intro || introDismissed) return;
